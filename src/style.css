@@ -1,3 +1,6 @@
-.hello {
+.content {
   color: red;
+  border: 8px solid red;
+  height: 50rem;
+  width: auto;
 }

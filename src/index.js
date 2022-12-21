@@ -1,14 +1,7 @@
-import _ from 'lodash';
 import './style.css';
 
-function component() {
-  const element = document.createElement('div');
-
-  // Lodash, now imported by this script
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-  element.classList.add('hello');
-
-  return element;
-}
-
-document.body.appendChild(component());
+const contentDiv = document.querySelector('.content');
+const testH1 = document.createElement('h1');
+testH1.textContent = 'Hello world ... test from index.js';
+contentDiv.appendChild(testH1);
+// document.body.appendChild(createToDO());
