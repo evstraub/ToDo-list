@@ -1,3 +1,4 @@
+/* eslint-disable guard-for-in */
 import { todosFunc } from './todosBlankLoad.js';
 
 export function displayDefaultProject() {
@@ -55,4 +56,43 @@ export function clearForm() {
     nodeListCheckList[i].remove();
   }
   document.getElementById('add-todo').reset();
+}
+
+export function displayToDo() {
+  // Check and clear current display DOM, if any
+  const removeDivs = document.querySelectorAll('.card');
+  console.log(
+    'show me the node count of current DOM card divs....',
+    removeDivs
+  );
+  // eslint-disable-next-line no-plusplus
+  for (let i = 0; i < removeDivs.length; i++) {
+    removeDivs[i].remove();
+  }
+
+  // Create the display card for the display DOM
+  console.log('display to screen');
+  const projects = document.querySelector('.projects');
+  const card = document.createElement('div');
+  card.classList.add('card');
+  projects.appendChild(card);
+
+  // Gather data from local backend storage and initialize
+  const Title = localStorage.getItem('Title');
+  const Description = localStorage.getItem('Description');
+  const DueDate = localStorage.getItem('DueDate');
+  const Priority = localStorage.getItem('Priority');
+  const CheckList = localStorage.getItem('CheckList');
+
+  // Place data in local temp array and loop over key/value pairs and display to DOM
+  const _displayArray = { Title, Description, DueDate, Priority, CheckList };
+  console.log(_displayArray);
+
+  // eslint-disable-next-line no-restricted-syntax
+  for (const key in _displayArray) {
+    console.log(`${key}: ${_displayArray[key]}`);
+    const para = document.createElement('p');
+    para.textContent = `${key}: ${_displayArray[key]}`;
+    card.appendChild(para);
+  }
 }
