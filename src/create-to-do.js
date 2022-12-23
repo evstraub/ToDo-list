@@ -12,6 +12,7 @@ export const createToDo = () => {
   const Priority = document.getElementById('Priority').value;
 
   // Check to see if empty fields exist
+  // eslint-disable-next-line eqeqeq
   if (Title == '' || Description == '' || DueDate == '') {
     alert(
       'Title, Description, and Due Date are required fields, please try again!'
@@ -30,7 +31,7 @@ export const createToDo = () => {
   }
 
   // Loop over the nodelist for Check List items from the DOM and format to string
-  const nodeListCheckList = document.querySelectorAll('li');
+  const nodeListCheckList = document.querySelectorAll('.form-li');
   const CheckListArray = [];
   // eslint-disable-next-line no-plusplus
   for (let i = 0; i < nodeListCheckList.length; i++) {
@@ -52,9 +53,10 @@ export const createToDo = () => {
   toDoArray.push({ Title, Description, DueDate, Priority, CheckList });
   console.log(toDoArray);
   // call storage module and push object to local storage
-  saveToDoToLocal({ Title, Description, DueDate, Priority, CheckList });
+  saveToDoToLocal({ Title, Description, DueDate, Priority }, CheckList);
   // reset form after successful submission
   clearForm();
 
-  return { Title, Description, DueDate, Priority, CheckList };
+  // eslint-disable-next-line no-sequences
+  return { Title, Description, DueDate, Priority }, CheckList;
 };

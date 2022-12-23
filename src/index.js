@@ -6,6 +6,7 @@ import {
   displayTheForm,
   addItemToCheckList,
   clearForm,
+  displayToDo,
 } from './dom-manip.js';
 
 // call todosFunc on first land
@@ -13,7 +14,8 @@ todosFunc();
 
 // Call DOM Manipulation module to load default project
 // displayDefaultProject();
-
+// Call displayToDo on first land - pulls from web local storage API (if any)
+displayToDo();
 // Click events module
 const clickEventsModule = (function () {
   // Click event for displaying the form
@@ -32,25 +34,3 @@ const clickEventsModule = (function () {
   const submitButton = document.querySelector('.submit-button');
   submitButton.addEventListener('click', createToDo);
 })();
-
-// call create-to-do.js module file and appl some objects/properties(this will eventually be replaced by ui)
-// const myToDo = createToDo(
-//   'christmas presents',
-//   'for emma',
-//   '02/25/2001',
-//   'high',
-//   'card',
-//   'money',
-//   'book'
-// );
-// const myToDo2 = createToDo(
-//   'christmas presents',
-//   'for lane',
-//   '02/25/2001',
-//   'high',
-//   'ticket',
-//   'dollars',
-//   'video games'
-// );
-// console.log('show me properties on my ToDo from index.js.....', myToDo);
-// console.log('show me properties on my ToDo2 from index.js.....', myToDo2);
