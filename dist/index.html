@@ -6,45 +6,37 @@
     <title>To Do List</title>
   </head>
   <body>
-    <header>
-    <header>
-		<h1>To Do List</h1>
-		<form id="new-task-form">
-			<input 
-				type="text" 
-				name="new-task-input" 
-				id="new-task-input" 
-				placeholder="What to do?" />
-			<input 
-				type="submit"
-				id="new-task-submit" 
-				value="Add task" />
-		</form>
-	</header>
-	<main>
-		<section class="task-list">
-			<h2>Tasks</h2>
-
-			<div id="tasks">
-
-				<div class="task">
-					<div class="content">
-						<input 
-							type="text" 
-							class="text" 
-							value="A new task"
-							readonly>
-					</div>
-					<div class="actions">
-						<button class="edit">Edit</button>
-						<button class="delete">Delete</button>
-					</div>
-				</div>
-
-			</div>
-		</section>
-	</main>
-
-    <script src="bundle.js"></script>
+    <div class="container">
+      <aside class="sidebar"><p class="inbox">inbox</p></aside>
+      <header>
+        <h1>To Do List</h1>
+        <form id="new-task-form">
+          <input
+            type="text"
+            name="new-task-input"
+            id="new-task-input"
+            placeholder="What to do?"
+          />
+          <input type="submit" id="new-task-submit" value="Add task" />
+        </form>
+      </header>
+      <main>
+        <section class="task-list">
+          <h2>Tasks</h2>
+          <div id="tasks">
+            <div class="task">
+              <div class="content">
+                <input type="text" class="text" value="A new task" readonly />
+              </div>
+              <div class="actions">
+                <button class="edit">Edit</button>
+                <button class="delete">Delete</button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <script src="bundle.js"></script>
+    </div>
   </body>
 </html>
