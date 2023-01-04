@@ -6,19 +6,27 @@
     <title>To Do List</title>
   </head>
   <body>
-    <div class="contain">
+    <header>
       <h1>To Do List</h1>
-      <button class="button open-button">New ToDo</button>
-      <dialog class="modal" id="modal">
-        <!-- <div class="container"></div> -->
-        <!-- <button class="button close-button">Submit Todo</button> -->
-        <form class="form" method="dialog">
-          <input id="inputField" type="text" /><button id="addToDo">+</button>
-        </form>
-      </dialog>
-      <div class="to-dos" id="toDoContainer"></div>
-    </div>
-
+      <form id="new-task-form">
+        <input type="text" id="new-task-input" placeholder="what to do?" />
+        <input type="submit" id="new-task-submit" value="add task" />
+      </form>
+    </header>
+    <main>
+      <section class="task-list">
+        <h2>Tasks</h2>
+        <div id="tasks"></div>
+        <div class="task">
+          <div clas="content">
+            <input type="text" class="text" value="my shiny task" readonly />
+          </div>
+          <div class="actions"></div>
+          <button class="edit">edit</button>
+          <button class="delete">delete</button>
+        </div>
+      </section>
+    </main>
     <script src="bundle.js"></script>
   </body>
 </html>
