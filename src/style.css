@@ -73,6 +73,13 @@ h2 {
   outline: none;
   background: none;
 }
+/* .date {
+  cursor: pointer;
+  appearance: none;
+  border: none;
+  outline: none;
+  background: none;
+} */
 #tasks .task {
   display: flex;
   justify-content: space-between;

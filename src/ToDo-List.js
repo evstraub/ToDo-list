@@ -1,3 +1,5 @@
+/* eslint-disable camelcase */
+
 export function toDoList() {
   window.addEventListener('load', () => {
     const form = document.querySelector('#new-task-form');
@@ -36,6 +38,10 @@ export function toDoList() {
       task_delete_el.classList.add('delete');
       task_delete_el.innerText = 'Delete';
 
+      // const task_date_el = document.createElement('button');
+      // task_date_el.classList.add('date');
+      // task_date_el.innerText = 'Add date';
+
       task_actions_el.appendChild(task_edit_el);
       task_actions_el.appendChild(task_delete_el);
 
@@ -46,6 +52,7 @@ export function toDoList() {
       input.value = '';
 
       task_edit_el.addEventListener('click', (e) => {
+        // eslint-disable-next-line eqeqeq
         if (task_edit_el.innerText.toLowerCase() == 'edit') {
           task_edit_el.innerText = 'Save';
           task_input_el.removeAttribute('readonly');
